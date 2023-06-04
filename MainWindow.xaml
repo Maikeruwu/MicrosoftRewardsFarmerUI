@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MicrosoftRewardsFarmerUI"
         mc:Ignorable="d"
-        Title="Microsoft Rewards Farmer" Height="420" Width="810">
+        Title="Microsoft Rewards Farmer" Height="420" Width="820">
     <Grid>
-        <Border BorderBrush="Black" BorderThickness="1" Margin="10,10,510,220">
+        <Border BorderBrush="Black" BorderThickness="1" Margin="10,10,520,216">
             <Grid>
                 <Label Content="Account" FontSize="20"/>
 
@@ -22,27 +22,41 @@
                 <ComboBox x:Name="AccountComboBox" Width="40" Height="20" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10,10,10,10"/>
             </Grid>
         </Border>
-        <Border BorderBrush="Black" BorderThickness="1" Margin="10,180,510,10">
+        <Border BorderBrush="Black" BorderThickness="1" Margin="10,180,520,10">
             <Grid>
                 <Label Content="Options" FontSize="20"/>
+                
+                <Label Content="Desktop Searches:" Width="110" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,40,0,0"/>
+                <TextBox x:Name="DesktopTextBox" Width="40" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,44,120,0" TextChanged="NumericOnly" />
 
-                <Label Content="Desktop Searches:" Width="110" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,50,0,0"/>
-                <TextBox x:Name="DesktopTextBox" Width="40" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,54,120,0" TextChanged="NumericOnly" />
+                <Label Content="Mobile Searches:" Width="110" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,70,0,0"/>
+                <TextBox x:Name="MobileTextBox" Width="40" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,74,120,0" TextChanged="NumericOnly" />
 
-                <Label Content="Mobile Searches:" Width="110" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,80,0,0"/>
-                <TextBox x:Name="MobileTextBox" Width="40" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,84,120,0" TextChanged="NumericOnly" />
+                <Expander Header="Advanced" Margin="3,100,-115,-14" Height="110" Width="400" ExpandDirection="Down">
+                    <Grid>
+                        <CheckBox x:Name="PromosCheckBox" Content="Complete Promos" Width="200" Height="20" Margin="-20,10,155,57"/>
+                        <CheckBox x:Name="HeadCheckBox" Content="Show Window" Width="200" Height="20" Margin="-20,30,155,32"/>
+                    </Grid>
+                </Expander>
 
-                <CheckBox x:Name="PromosCheckBox" Content="Complete Promos" Width="120" Height="20" Margin="3,115,155,57"/>
-                <CheckBox x:Name="HeadCheckBox" Content="Show the Chrome Window" Height="20" Margin="3,140,106,32"/>
+                <Expander Header="Recommended" Margin="150,100,0,-14" Height="110" Width="400" ExpandDirection="Down">
+                    <Grid>
+                        <Button x:Name="Level1Button" Content="Level 1" Width="50" Height="20" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Level1Button_Click" />
+                        <Button x:Name="Level2Button" Content="Level 2" Width="50" Height="20" Margin="10,40,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Level2Button_Click" />
+                    </Grid>
+                </Expander>
             </Grid>
         </Border>
         <Border BorderBrush="Black" BorderThickness="1" Margin="300,10,10,10">
             <Grid>
                 <Label Content="Program" FontSize="20"/>
-                <Button Content="Run Program" Width="100" Height="20" Margin="0,10,10,0" HorizontalAlignment="Right" VerticalAlignment="Top" />
+                <Button x:Name="SubmitButton" Content="Start Program" Width="100" Height="20" Margin="0,10,120,0" HorizontalAlignment="Right" VerticalAlignment="Top" Click="SubmitButton_Click" />
+                <Button x:Name="KillButton" Content="Stop Program" Width="100" Height="20" Margin="0,10,10,0" HorizontalAlignment="Right" VerticalAlignment="Top" Click="KillButton_Click" />
 
                 <Border BorderBrush="Gray" BorderThickness="1" Margin="10,40,10,10">
-                    <TextBlock x:Name="OutputBlock" Foreground="White" Background="Black"/>
+                    <ScrollViewer>
+                        <TextBlock x:Name="OutputBlock" FontFamily="Cascadia Mono" TextWrapping="Wrap"/>
+                    </ScrollViewer>
                 </Border>
             </Grid>
         </Border>

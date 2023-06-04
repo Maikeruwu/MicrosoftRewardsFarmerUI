@@ -7,6 +7,7 @@ import random
 import urllib.parse
 import ipapi
 import os
+import sys
 
 from selenium import webdriver
 from selenium.webdriver.chrome.webdriver import WebDriver
@@ -749,24 +750,15 @@ def getRemainingSearches(browser: WebDriver):
         remainingMobile = int((targetMobile - progressMobile) / searchPoints)
     return remainingDesktop, remainingMobile
 
-def prRed(prt):
-    print("\033[91m{}\033[00m".format(prt))
-def prGreen(prt):
-    print("\033[92m{}\033[00m".format(prt))
-def prPurple(prt):
-    print("\033[95m{}\033[00m".format(prt))
-def prYellow(prt):
-    print("\033[93m{}\033[00m".format(prt))
-
-prRed("""
-███╗   ███╗███████╗    ███████╗ █████╗ ██████╗ ███╗   ███╗███████╗██████╗ 
-████╗ ████║██╔════╝    ██╔════╝██╔══██╗██╔══██╗████╗ ████║██╔════╝██╔══██╗
-██╔████╔██║███████╗    █████╗  ███████║██████╔╝██╔████╔██║█████╗  ██████╔╝
-██║╚██╔╝██║╚════██║    ██╔══╝  ██╔══██║██╔══██╗██║╚██╔╝██║██╔══╝  ██╔══██╗
-██║ ╚═╝ ██║███████║    ██║     ██║  ██║██║  ██║██║ ╚═╝ ██║███████╗██║  ██║
-╚═╝     ╚═╝╚══════╝    ╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝╚═╝  ╚═╝""")
-prPurple("         by Charles Bel (@charlesbel)               version 2.0")
-prPurple("modified by Maikeruwu (@maikeruwu)\n")
+print("""
+  __  __ ____    _____ _    ____  __  __ _____ ____
+ |  \/  / ___|  |  ___/ \  |  _ \|  \/  | ____|  _ \\
+ | |\/| \___ \  | |_ / _ \ | |_) | |\/| |  _| | |_) |
+ | |  | |___) | |  _/ ___ \|  _ <| |  | | |___|  _ <
+ |_|  |_|____/  |_|/_/   \_\_| \_\_|  |_|_____|_| \_\\\n""")
+print("created  by Charles Bel (@charlesbel)               version 2.0")
+print("modified by Maikeruwu (@maikeruwu)\n")
+sys.stdout.flush()
 
 LANG, GEO, TZ = getCCodeLangAndOffset()
 
@@ -790,7 +782,7 @@ elif email == "" and pwd != "":
                 "username": "Your Email",
                 "password": pwd
             }], indent=4))
-        prPurple("""
+        print("""
     [ACCOUNT] Accounts credential file "accounts.json" created.
     [ACCOUNT] Edit with your credentials and save, then run the program again.
         """)
@@ -807,7 +799,7 @@ else:
                 "username": "Your Email",
                 "password": "Your Password"
             }], indent=4))
-        prPurple("""
+        print("""
     [ACCOUNT] Accounts credential file "accounts.json" created.
     [ACCOUNT] Edit with your credentials and save, then run the program again.
         """)
@@ -819,15 +811,15 @@ for account in ACCOUNTS:
     remainingSearches   : int = int(desktop)
     remainingSearchesM  : int = int(mobile) #getRemainingSearches(browser)
 
-    prYellow('********************' + account['username'] + '********************')
+    print('********************' + account['username'] + '********************')
     
     if remainingSearches != 0:
         browser = browserSetup(head, PC_USER_AGENT)
         print('[LOGIN]', 'Logging-in...')
         login(browser, account['username'], account['password'])
-        prGreen('[LOGIN] Logged-in successfully !')
+        print('[LOGIN] Logged-in successfully !')
         startingPoints = POINTS_COUNTER
-        prGreen('[POINTS] You have ' + str(POINTS_COUNTER) + ' points on your account !')
+        print('[POINTS] You have ' + str(POINTS_COUNTER) + ' points on your account !')
 
         browser.get('https://account.microsoft.com/')
         ## Script would always chrash here, so I commented it out, and it works fine
@@ -848,16 +840,16 @@ for account in ACCOUNTS:
         if promos is True:
             print('[DAILY SET]', 'Trying to complete the Daily Set...')
             completeDailySet(browser)
-            prGreen('[DAILY SET] Completed the Daily Set successfully !')
+            print('[DAILY SET] Completed the Daily Set successfully !')
             print('[PUNCH CARDS]', 'Trying to complete the Punch Cards...')
             completePunchCards(browser)
-            prGreen('[PUNCH CARDS] Completed the Punch Cards successfully !')
+            print('[PUNCH CARDS] Completed the Punch Cards successfully !')
             print('[MORE PROMO]', 'Trying to complete More Promotions...')
             completeMorePromotions(browser)
-            prGreen('[MORE PROMO] Completed More Promotions successfully !')
+            print('[MORE PROMO] Completed More Promotions successfully !')
         print('[BING]', 'Starting Desktop and Edge Bing searches...')
         bingSearches(browser, remainingSearches)
-        prGreen('[BING] Finished Desktop and Edge Bing searches !')
+        print('[BING] Finished Desktop and Edge Bing searches !')
         browser.quit()
         
     if remainingSearchesM != 0:
@@ -867,8 +859,8 @@ for account in ACCOUNTS:
         print('[LOGIN]', 'Logged-in successfully !')
         print('[BING]', 'Starting Mobile Bing searches...')
         bingSearches(browser, remainingSearchesM, True)
-        prGreen('[BING] Finished Mobile Bing searches !')
+        print('[BING] Finished Mobile Bing searches !')
         browser.quit()
 
-    prGreen('[POINTS] You have earned ' + str(POINTS_COUNTER - startingPoints) + ' points today !')
-    prGreen('[POINTS] You are now at ' + str(POINTS_COUNTER) + ' points !\n')
+    print('[POINTS] You have earned ' + str(POINTS_COUNTER - startingPoints) + ' points today !')
+    print('[POINTS] You are now at ' + str(POINTS_COUNTER) + ' points !\n')
