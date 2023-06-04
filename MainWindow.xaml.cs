@@ -27,8 +27,15 @@ namespace MicrosoftRewardsFarmerUI {
             AccountComboBox.ItemsSource = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9};
         }
 
-        private void NumericOnly(object sender, TextCompositionEventArgs e) {
-            e.Handled = !int.TryParse(((TextBox)sender).Text + e.Text, out int i) && i >= 1 && i <= 99;
+        private void NumericOnly(object sender, TextChangedEventArgs e) {
+            string res = string.Empty;
+
+            foreach (char c in ((TextBox)sender).Text) { 
+                if (char.IsDigit(c)) {
+                    res += c;
+                }
+            }
+            ((TextBox)sender).Text = res;
         }
     }
 }
