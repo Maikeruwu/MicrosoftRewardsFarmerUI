@@ -25,7 +25,7 @@
         <Border BorderBrush="Black" BorderThickness="1" Margin="10,180,520,10">
             <Grid>
                 <Label Content="Options" FontSize="20"/>
-                
+
                 <Label Content="Desktop Searches:" Width="110" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,40,0,0"/>
                 <TextBox x:Name="DesktopTextBox" Width="40" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,44,120,0" TextChanged="NumericOnly" />
 
