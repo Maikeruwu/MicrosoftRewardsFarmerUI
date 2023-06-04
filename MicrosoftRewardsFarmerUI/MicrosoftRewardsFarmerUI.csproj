@@ -8,7 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="msr\" />
+    <None Remove="msr.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="data\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -16,22 +20,32 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="msr\.gitignore">
+    <Resource Include="msr.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="data\.gitignore">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="msr\accounts.json">
+    <None Update="data\accounts.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="msr\LICENSE">
+    <None Update="data\LICENSE">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="msr\ms_rewards_farmer.py">
+    <None Update="data\msr.ico">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="msr\README.md">
+    <None Update="data\msr.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="msr\requirements.txt">
+    <None Update="data\ms_rewards_farmer.py">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="data\README.md">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="data\requirements.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

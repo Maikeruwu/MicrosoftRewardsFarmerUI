@@ -23,8 +23,8 @@ head = False
 promos = True
 desktop = 34
 mobile = 20
-email = ""
-pwd = ""
+email = "dsf"
+pwd = "fdsf"
 
 for opt in argv:
     if opt.startswith("head="): head = opt.partition('=')[2]
@@ -43,13 +43,13 @@ POINTS_COUNTER = 0
 BASE_URL = ""
 
 # Define browser setup function
-def browserSetup(head_mode: bool = True, user_agent: str = PC_USER_AGENT) -> WebDriver:
+def browserSetup(head_mode: bool, user_agent: str = PC_USER_AGENT) -> WebDriver:
     # Create Chrome browser
     from selenium.webdriver.chrome.options import Options
     options = Options()
     options.add_argument("user-agent=" + user_agent)
     options.add_argument('lang=' + LANG.split("-")[0])
-    if not head_mode :
+    if head_mode == False:
         options.add_argument("--headless")
     options.add_argument('log-level=3')
     chrome_browser_obj = webdriver.Chrome(options=options)
