@@ -5,17 +5,36 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MicrosoftRewardsFarmerUI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="400" Width="800">
     <Grid>
-        <Border BorderBrush="Black" BorderThickness="1" Margin="10,10,400,217">
+        <Border BorderBrush="Black" BorderThickness="1" Margin="10,10,510,220">
             <Grid>
                 <Label Content="Account" FontSize="20"/>
-                <Button Content="Load from JSON" Width="100" Height="30" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10,10,10,0"/>
-                <ComboBox x:Name="accountComboBox" Width="40" Height="30" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10,10,10,0"/>
+
                 <Label Content="Email:" Width="40" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,50,0,0"/>
-                <TextBox x:Name="EmailTextBox" Width="200" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,54,141,0"/>
+                <TextBox x:Name="EmailTextBox" Width="200" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,54,10,0"/>
+
+                <Label Content="Password:" Width="80" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,80,0,0"/>
+                <TextBox x:Name="PasswordTextBox" Width="200" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,84,10,0"/>
+
+                <Button Content="Save to JSON" Width="100" Height="20" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,10,60,10"/>
+                <Button Content="Load from JSON" Width="100" Height="20" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10,10,60,10"/>
+                <ComboBox x:Name="AccountComboBox" Width="40" Height="20" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10,10,10,10"/>
             </Grid>
         </Border>
+        <Border BorderBrush="Black" BorderThickness="1" Margin="10,180,510,10">
+            <Grid>
+                <Label Content="Options" FontSize="20"/>
 
+                <Label Content="Desktop Searches:" Width="110" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,50,0,0"/>
+                <TextBox x:Name="DesktopTextBox" Width="40" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,54,120,0" PreviewTextInput="NumericOnly" />
+
+                <Label Content="Mobile Searches:" Width="110" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,80,0,0"/>
+                <TextBox x:Name="MobileTextBox" Width="40" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,84,120,0" PreviewTextInput="NumericOnly" />
+
+                <CheckBox x:Name="PromosCheckBox" Content="Complete Promos" Width="120" Height="20" Margin="3,115,155,57"/>
+                <CheckBox x:Name="HeadCheckBox" Content="Show the Chrome Window" Height="20" Margin="3,140,106,32"/>
+            </Grid>
+        </Border>
     </Grid>
 </Window>

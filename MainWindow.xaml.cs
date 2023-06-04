@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -21,7 +23,12 @@ namespace MicrosoftRewardsFarmerUI {
         public MainWindow() {
             InitializeComponent();
 
-            accountComboBox.ItemsSource = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9};
+            //TODO: Get amount of accounts from accounts.json
+            AccountComboBox.ItemsSource = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9};
+        }
+
+        private void NumericOnly(object sender, TextCompositionEventArgs e) {
+            e.Handled = !int.TryParse(((TextBox)sender).Text + e.Text, out int i) && i >= 1 && i <= 99;
         }
     }
 }
