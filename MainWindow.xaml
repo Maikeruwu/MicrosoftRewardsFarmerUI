@@ -7,6 +7,15 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Border BorderBrush="Black" BorderThickness="1" Margin="10,10,400,217">
+            <Grid>
+                <Label Content="Account" FontSize="20"/>
+                <Button Content="Load from JSON" Width="100" Height="30" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10,10,10,0"/>
+                <ComboBox x:Name="accountComboBox" Width="40" Height="30" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10,10,10,0"/>
+                <Label Content="Email:" Width="40" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,50,0,0"/>
+                <TextBox x:Name="EmailTextBox" Width="200" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,54,141,0"/>
+            </Grid>
+        </Border>
 
     </Grid>
 </Window>
