@@ -15,7 +15,7 @@
                 <TextBox x:Name="EmailTextBox" Width="200" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,54,10,0"/>
 
                 <Label Content="Password:" Width="80" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,80,0,0"/>
-                <TextBox x:Name="PasswordTextBox" Width="200" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,84,10,0"/>
+                <PasswordBox x:Name="PasswordTextBox" Width="200" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,84,10,0"/>
 
                 <Button Content="Save to JSON" Width="100" Height="20" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="5,10,60,10"/>
                 <Button Content="Load from JSON" Width="100" Height="20" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10,10,55,10"/>
