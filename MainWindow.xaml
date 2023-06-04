@@ -17,9 +17,8 @@
                 <Label Content="Password:" Width="80" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,80,0,0"/>
                 <PasswordBox x:Name="PasswordTextBox" Width="200" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,84,10,0"/>
 
-                <Button Content="Save to JSON" Width="100" Height="20" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="5,10,60,10"/>
-                <Button Content="Load from JSON" Width="100" Height="20" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10,10,55,10"/>
-                <ComboBox x:Name="AccountComboBox" Width="40" Height="20" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10,10,10,10"/>
+                <Button x:Name="SaveButton" Content="Save Account" Width="100" Height="20" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="5,10,60,10" Click="SaveButton_Click"/>
+                <ComboBox x:Name="AccountComboBox" Width="120" Height="20" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10,10,10,10" SelectionChanged="AccountComboBox_SelectionChanged" DropDownOpened="AccountComboBox_DropDownOpened"/>
             </Grid>
         </Border>
         <Border BorderBrush="Black" BorderThickness="1" Margin="10,180,520,10">
@@ -27,10 +26,10 @@
                 <Label Content="Options" FontSize="20"/>
 
                 <Label Content="Desktop Searches:" Width="110" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,40,0,0"/>
-                <TextBox x:Name="DesktopTextBox" Width="40" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,44,120,0" TextChanged="NumericOnly" />
+                <TextBox x:Name="DesktopTextBox" Text="0"  Width="40" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,44,120,0" TextChanged="NumericOnly" />
 
                 <Label Content="Mobile Searches:" Width="110" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,70,0,0"/>
-                <TextBox x:Name="MobileTextBox" Width="40" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,74,120,0" TextChanged="NumericOnly" />
+                <TextBox x:Name="MobileTextBox" Text="0" Width="40" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,74,120,0" TextChanged="NumericOnly" />
 
                 <Expander Header="Advanced" Margin="3,100,-115,-14" Height="110" Width="400" ExpandDirection="Down">
                     <Grid>

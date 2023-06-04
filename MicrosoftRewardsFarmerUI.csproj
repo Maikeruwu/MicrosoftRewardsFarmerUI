@@ -12,6 +12,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Update="msr\.gitignore">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

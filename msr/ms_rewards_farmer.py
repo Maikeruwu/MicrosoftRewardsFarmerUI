@@ -768,42 +768,44 @@ if email != "" and pwd != "":
         "username": email,
         "password": pwd
     }]
+else:
+    print("[ACCOUNT] Please provide an email and password.")
+    quit()
+# # Get Email from json and Password from input
+# elif email == "" and pwd != "":
+#     try:
+#         account_path = os.path.dirname(os.path.abspath(__file__)) + '/accounts.json'
+#         ACCOUNTS = json.load(open(account_path, "r"))
+#         for account in ACCOUNTS:
+#             account['password'] = pwd
+#     except FileNotFoundError:
+#         with open(account_path, 'w') as f:
+#             f.write(json.dumps([{
+#                 "username": "Your Email",
+#                 "password": pwd
+#             }], indent=4))
+#         print("""
+#     [ACCOUNT] Accounts credential file "accounts.json" created.
+#     [ACCOUNT] Edit with your credentials and save, then run the program again.
+#         """)
+#         quit()
 
-# Get Email from json and Password from input
-elif email == "" and pwd != "":
-    try:
-        account_path = os.path.dirname(os.path.abspath(__file__)) + '/accounts.json'
-        ACCOUNTS = json.load(open(account_path, "r"))
-        for account in ACCOUNTS:
-            account['password'] = pwd
-    except FileNotFoundError:
-        with open(account_path, 'w') as f:
-            f.write(json.dumps([{
-                "username": "Your Email",
-                "password": pwd
-            }], indent=4))
-        print("""
-    [ACCOUNT] Accounts credential file "accounts.json" created.
-    [ACCOUNT] Edit with your credentials and save, then run the program again.
-        """)
-        quit()
-
-# Get Email and Password from json
-else: 
-    try:
-        account_path = os.path.dirname(os.path.abspath(__file__)) + '/accounts.json'
-        ACCOUNTS = json.load(open(account_path, "r"))
-    except FileNotFoundError:
-        with open(account_path, 'w') as f:
-            f.write(json.dumps([{
-                "username": "Your Email",
-                "password": "Your Password"
-            }], indent=4))
-        print("""
-    [ACCOUNT] Accounts credential file "accounts.json" created.
-    [ACCOUNT] Edit with your credentials and save, then run the program again.
-        """)
-        quit()
+# # Get Email and Password from json
+# else: 
+#     try:
+#         account_path = os.path.dirname(os.path.abspath(__file__)) + '/accounts.json'
+#         ACCOUNTS = json.load(open(account_path, "r"))
+#     except FileNotFoundError:
+#         with open(account_path, 'w') as f:
+#             f.write(json.dumps([{
+#                 "username": "Your Email",
+#                 "password": "Your Password"
+#             }], indent=4))
+#         print("""
+#     [ACCOUNT] Accounts credential file "accounts.json" created.
+#     [ACCOUNT] Edit with your credentials and save, then run the program again.
+#         """)
+#         quit()
 
 random.shuffle(ACCOUNTS)
 
