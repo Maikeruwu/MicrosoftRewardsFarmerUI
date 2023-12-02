@@ -26,23 +26,18 @@
             <Grid>
                 <Label Content="Options" FontSize="20"/>
 
-                <Label Content="Desktop Searches:" Width="110" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,40,0,0"/>
-                <TextBox x:Name="DesktopTextBox" Text="0"  Width="40" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,44,120,0" TextChanged="NumericOnly" />
+                <CheckBox x:Name="HeadCheckBox" Content="Show Window" Width="200" Margin="10,41,78,133"/>
 
-                <Label Content="Mobile Searches:" Width="110" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,70,0,0"/>
-                <TextBox x:Name="MobileTextBox" Text="0" Width="40" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,74,120,0" TextChanged="NumericOnly" />
-
-                <Expander Header="Advanced" Margin="3,100,-115,-14" Height="110" Width="400" ExpandDirection="Down">
+                <Expander Header="Advanced" Margin="5,65,-117,0" Width="400" ExpandDirection="Down">
                     <Grid>
-                        <CheckBox x:Name="PromosCheckBox" Content="Complete Promos" Width="200" Height="20" Margin="-20,10,155,57"/>
-                        <CheckBox x:Name="HeadCheckBox" Content="Show Window" Width="200" Height="20" Margin="-20,30,155,32"/>
-                    </Grid>
-                </Expander>
+                        <Label Content="Language:" Width="200" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,5,0,0"/>
+                        <TextBox x:Name="LanguageTextBox" Width="120" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,10,198,0"/>
 
-                <Expander Header="Recommended" Margin="150,100,0,-14" Height="110" Width="400" ExpandDirection="Down">
-                    <Grid>
-                        <Button x:Name="Level1Button" Content="Level 1" Width="50" Height="20" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Level1Button_Click" />
-                        <Button x:Name="Level2Button" Content="Level 2" Width="50" Height="20" Margin="10,40,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Level2Button_Click" />
+                        <Label Content="Geolocation:" Width="200" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,35,0,0"/>
+                        <TextBox x:Name="GeolocationTextBox" Width="120" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,39,198,0"/>
+
+                        <Label Content="Proxy:" Width="200" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,65,0,0"/>
+                        <TextBox x:Name="ProxyTextBox" Width="120" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="80,70,0,0"/>
                     </Grid>
                 </Expander>
             </Grid>
