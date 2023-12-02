@@ -1,0 +1,8 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/MicrosoftRewardsFarmerUI/data/.github
+/MicrosoftRewardsFarmerUI/data/.vscode
+/MicrosoftRewardsFarmerUI.zip

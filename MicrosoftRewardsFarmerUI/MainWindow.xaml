@@ -9,17 +9,48 @@
     <Grid>
         <Border BorderBrush="Black" BorderThickness="1" Margin="10,10,520,216">
             <Grid>
-                <Label Content="Account" FontSize="20"/>
+                <TabControl>
+                    <TabItem Header="Accounts">
+                        <Grid>
+                            <Label Content="Email:" Width="40" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,20,0,0"/>
+                            <TextBox x:Name="EmailTextBox" Width="200" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,24,10,0"/>
 
-                <Label Content="Email:" Width="40" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,50,0,0"/>
-                <TextBox x:Name="EmailTextBox" Width="200" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,54,10,0"/>
+                            <Label Content="Password:" Width="80" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,50,0,0"/>
+                            <PasswordBox x:Name="PasswordTextBox" Width="200" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,54,10,0"/>
 
-                <Label Content="Password:" Width="80" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,80,0,0"/>
-                <PasswordBox x:Name="PasswordTextBox" Width="200" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,84,10,0"/>
+                            <Button x:Name="SaveButton" Content="Save Account" Width="100" Height="20" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="5,10,60,10" Click="SaveButton_Click"/>
+                            <Button x:Name="DeleteButton" Content="X" Width="15" Height="20" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="5,10,135,10" Click="DeleteButton_Click"/>
+                            <ComboBox x:Name="AccountComboBox" Width="120" Height="20" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10,10,10,10" SelectionChanged="AccountComboBox_SelectionChanged" DropDownOpened="AccountComboBox_DropDownOpened"/>
+                        </Grid>
+                    </TabItem>
+                    <TabItem Header="Telegram">
+                        <Grid>
+                            <CheckBox x:Name="TelegramCheckBox" Content="Enable Telegram Notifier" Width="200" Margin="10,10,78,0"/>
 
-                <Button x:Name="SaveButton" Content="Save Account" Width="100" Height="20" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="5,10,60,10" Click="SaveButton_Click"/>
-                <Button x:Name="DeleteButton" Content="X" Width="15" Height="20" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="5,10,135,10" Click="DeleteButton_Click"/>
-                <ComboBox x:Name="AccountComboBox" Width="120" Height="20" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10,10,10,10" SelectionChanged="AccountComboBox_SelectionChanged" DropDownOpened="AccountComboBox_DropDownOpened"/>
+                            <Label Content="Token:" Width="80" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,30,0,0"/>
+                            <TextBox x:Name="TokenTextBox" Width="200" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,34,10,0"/>
+
+                            <Label Content="Chat ID:" Width="80" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,60,0,0"/>
+                            <TextBox x:Name="ChatIDTextBox" Width="200" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,64,10,0"/>
+
+                            <Button x:Name="TelegramSaveButton" Content="Save Bot" Width="100" Height="20" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="5,10,60,10" Click="TelegramSaveButton_Click"/>
+                            <Button x:Name="TelegramDeleteButton" Content="X" Width="15" Height="20" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="5,10,135,10" Click="TelegramDeleteButton_Click"/>
+                            <ComboBox x:Name="TelegramComboBox" Width="120" Height="20" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10,10,10,10" SelectionChanged="TelegramComboBox_SelectionChanged" DropDownOpened="TelegramComboBox_DropDownOpened"/>
+                        </Grid>
+                    </TabItem>
+                    <TabItem Header="Discord">
+                        <Grid>
+                            <CheckBox x:Name="DiscordCheckBox" Content="Enable Discord Notifier" Width="200" Margin="10,10,78,0"/>
+
+                            <Label Content="Webhook:" Width="80" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,30,0,0"/>
+                            <TextBox x:Name="WebhookTextBox" Width="200" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,34,10,0"/>
+
+                            <Button x:Name="DiscordSaveButton" Content="Save Webhook" Width="100" Height="20" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="5,10,60,10" Click="DiscordSaveButton_Click"/>
+                            <Button x:Name="DiscordDeleteButton" Content="X" Width="15" Height="20" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="5,10,135,10" Click="DiscordDeleteButton_Click"/>
+                            <ComboBox x:Name="DiscordComboBox" Width="120" Height="20" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10,10,10,10" SelectionChanged="DiscordComboBox_SelectionChanged" DropDownOpened="DiscordComboBox_DropDownOpened"/>
+                        </Grid>
+                    </TabItem>
+                </TabControl>
             </Grid>
         </Border>
         <Border BorderBrush="Black" BorderThickness="1" Margin="10,180,520,10">
