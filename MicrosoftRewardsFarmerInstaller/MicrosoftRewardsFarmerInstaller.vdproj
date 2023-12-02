@@ -15,13 +15,13 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_91F94E36EED541AD82E962BD32657E53"
+        "MsmKey" = "8:_940D04A572C94F2A86E8BA6921CD6407"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_D605B5A8BBEE4A95AA6BE66994704038"
+        "MsmKey" = "8:_D2A0ABF6F83C4D2392B34BFDAF5196DF"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -82,6 +82,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
     }
@@ -114,9 +122,9 @@
         }
         "File"
         {
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D605B5A8BBEE4A95AA6BE66994704038"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_940D04A572C94F2A86E8BA6921CD6407"
             {
-            "SourcePath" = "8:..\\MicrosoftRewardsFarmerUI\\msr\\msr.ico"
+            "SourcePath" = "8:..\\MicrosoftRewardsFarmerUI\\data\\msr.ico"
             "TargetName" = "8:msr.ico"
             "Tag" = "8:"
             "Folder" = "8:_9EC299892CD3412B982305D77E44A878"
@@ -149,6 +157,28 @@
             "Property" = "8:StartupFolder"
                 "Folders"
                 {
+                }
+            }
+            "{1525181F-901A-416C-8A58-119130FE478E}:_80E25D277AC14315BF9F5F1F65C0002F"
+            {
+            "Name" = "8:#1915"
+            "AlwaysCreate" = "11:FALSE"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Property" = "8:AppDataFolder"
+                "Folders"
+                {
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_12FAE8FBC9404F60B53C352EA7B5679F"
+                    {
+                    "Name" = "8:MicrosoftRewardsFarmerUI"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_B77527482765430D9A88A1FC61125CED"
+                        "Folders"
+                        {
+                        }
+                    }
                 }
             }
             "{3C67513D-01DD-4637-8A68-80971EB9504F}:_9EC299892CD3412B982305D77E44A878"
@@ -200,16 +230,16 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:MicrosoftRewardsFarmer"
-        "ProductCode" = "8:{D774796E-E668-4A84-AB29-CCEB2892C6D8}"
-        "PackageCode" = "8:{413D1A67-1A7B-455D-900A-A98C40D13048}"
+        "ProductName" = "8:Microsoft Rewards Farmer UI"
+        "ProductCode" = "8:{EC298B2F-24B5-4E31-A029-BC1C13DE367B}"
+        "PackageCode" = "8:{CCE9CEA7-9D86-436A-BF79-1EB6F350F22B}"
         "UpgradeCode" = "8:{2E276D2F-A4D3-4EAA-B470-FEA29C4236EA}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.0.0"
+        "ProductVersion" = "8:2.0.0"
         "Manufacturer" = "8:Maikeruwu"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
@@ -219,7 +249,7 @@
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:"
         "ARPURLINFOABOUT" = "8:https://github.com/Maikeruwu"
-        "ARPPRODUCTICON" = "8:_D605B5A8BBEE4A95AA6BE66994704038"
+        "ARPPRODUCTICON" = "8:_940D04A572C94F2A86E8BA6921CD6407"
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"
         "UseSystemSearchPath" = "11:TRUE"
@@ -322,32 +352,46 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_24F7BDE3522D43689F0D5964E757558C"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_C0DDD6EE6962466A9E3539D9A8DAD5C4"
             {
-            "Name" = "8:MicrosoftRewardsFarmer"
+            "Name" = "8:Microsoft Rewards Farmer UI Autostart"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_91F94E36EED541AD82E962BD32657E53"
-            "Folder" = "8:_A98CBB3282934D26A9BD5DCA2B3F1B1C"
-            "WorkingFolder" = "8:_9EC299892CD3412B982305D77E44A878"
-            "Icon" = "8:_D605B5A8BBEE4A95AA6BE66994704038"
-            "Feature" = "8:"
-            }
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_6D5162807865409D886C6C53F17D6D66"
-            {
-            "Name" = "8:MicrosoftRewardsFarmerAutostart"
-            "Arguments" = "8:"
-            "Description" = "8:"
-            "ShowCmd" = "3:1"
-            "IconIndex" = "3:0"
-            "Transitive" = "11:FALSE"
-            "Target" = "8:_91F94E36EED541AD82E962BD32657E53"
+            "Target" = "8:_D2A0ABF6F83C4D2392B34BFDAF5196DF"
             "Folder" = "8:_2E0021FCE5AF4B3CB6B3941A39F4FCA7"
             "WorkingFolder" = "8:_9EC299892CD3412B982305D77E44A878"
-            "Icon" = "8:_D605B5A8BBEE4A95AA6BE66994704038"
+            "Icon" = "8:_940D04A572C94F2A86E8BA6921CD6407"
+            "Feature" = "8:"
+            }
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_DD0195DF7FB74B90A5005D545DE7A0AA"
+            {
+            "Name" = "8:Microsoft Rewards Farmer UI"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_D2A0ABF6F83C4D2392B34BFDAF5196DF"
+            "Folder" = "8:_A98CBB3282934D26A9BD5DCA2B3F1B1C"
+            "WorkingFolder" = "8:_9EC299892CD3412B982305D77E44A878"
+            "Icon" = "8:_940D04A572C94F2A86E8BA6921CD6407"
+            "Feature" = "8:"
+            }
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_E57B4BED05F9493C98C348C120D8F68E"
+            {
+            "Name" = "8:Microsoft Rewards Farmer UI"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_D2A0ABF6F83C4D2392B34BFDAF5196DF"
+            "Folder" = "8:_B8E25D6303994250BE7DE6A9EF145EE4"
+            "WorkingFolder" = "8:_9EC299892CD3412B982305D77E44A878"
+            "Icon" = "8:_940D04A572C94F2A86E8BA6921CD6407"
             "Feature" = "8:"
             }
         }
@@ -692,9 +736,37 @@
         }
         "ProjectOutput"
         {
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_91F94E36EED541AD82E962BD32657E53"
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_BE3F35A9EDD7408C932E4C83D57385D0"
             {
-            "SourcePath" = "8:..\\MicrosoftRewardsFarmerUI\\obj\\Debug\\net7.0-windows\\apphost.exe"
+            "SourcePath" = "8:"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_12FAE8FBC9404F60B53C352EA7B5679F"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            "ProjectOutputGroupRegister" = "3:1"
+            "OutputConfiguration" = "8:"
+            "OutputGroupCanonicalName" = "8:ContentFiles"
+            "OutputProjectGuid" = "8:{DA8E897C-3A8E-484D-9035-9887D8931183}"
+            "ShowKeyOutput" = "11:TRUE"
+                "ExcludeFilters"
+                {
+                }
+            }
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_D2A0ABF6F83C4D2392B34BFDAF5196DF"
+            {
+            "SourcePath" = "8:..\\MicrosoftRewardsFarmerUI\\obj\\Release\\net7.0-windows\\apphost.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_9EC299892CD3412B982305D77E44A878"
@@ -712,12 +784,16 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             "ProjectOutputGroupRegister" = "3:1"
-            "OutputConfiguration" = "8:"
+            "OutputConfiguration" = "8:Release|Any CPU"
             "OutputGroupCanonicalName" = "8:PublishItems"
             "OutputProjectGuid" = "8:{DA8E897C-3A8E-484D-9035-9887D8931183}"
             "ShowKeyOutput" = "11:TRUE"
                 "ExcludeFilters"
                 {
+                "ExcludeFilter" = "8:telegrams.json"
+                "ExcludeFilter" = "8:discords.json"
+                "ExcludeFilter" = "8:allAccounts.json"
+                "ExcludeFilter" = "8:accounts.json"
                 }
             }
         }
