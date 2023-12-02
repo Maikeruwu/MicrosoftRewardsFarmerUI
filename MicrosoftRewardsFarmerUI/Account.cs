@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace MicrosoftRewardsFarmerUI {
     internal class Account {
-        public string Username { get; set; }
-        public string Password { get; set; }
+        // These fields need to be lowercase for JSON serialization, sorry for the inconsistency
+        public string username { get; set; }
+        public string password { get; set; }
 
         public Account(string username, string password) {
-            Username = username;
-            Password = password;
+            this.username = username;
+            this.password = password;
         }
     }
 }
