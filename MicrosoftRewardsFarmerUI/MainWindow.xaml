@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MicrosoftRewardsFarmerUI"
         mc:Ignorable="d"
-        Title="Microsoft Rewards Farmer" Height="420" Width="820" ResizeMode="CanMinimize" Icon="/msr.png">
+        Title="Microsoft Rewards Farmer" Height="420" Width="820" ResizeMode="CanMinimize" Icon="/msr.png" Closing="Window_Closing">
     <Grid>
         <Border BorderBrush="Black" BorderThickness="1" Margin="10,10,520,216">
             <Grid>
@@ -50,7 +50,8 @@
         <Border BorderBrush="Black" BorderThickness="1" Margin="300,10,10,10">
             <Grid>
                 <Label Content="Program" FontSize="20"/>
-                <Button x:Name="ClearButton" Content="X" Width="15" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10,10,230,0" Click="ClearButton_Click"/>
+                <Button x:Name="ClearButton" Content="X" Width="14" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,10,340,0" Click="ClearButton_Click"/>
+                <Button x:Name="InstallButton" Content="Install packages" Width="100" Height="20" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,10,230,0" Click="InstallButton_Click"/>
                 <Button x:Name="SubmitButton" Content="Start Program" Width="100" Height="20" Margin="0,10,120,0" HorizontalAlignment="Right" VerticalAlignment="Top" Click="SubmitButton_Click" />
                 <Button x:Name="KillButton" Content="Stop Program" Width="100" Height="20" Margin="0,10,10,0" HorizontalAlignment="Right" VerticalAlignment="Top" Click="KillButton_Click" />
 
@@ -61,5 +62,5 @@
                 </Border>
             </Grid>
         </Border>
-        </Grid>
+    </Grid>
 </Window>
