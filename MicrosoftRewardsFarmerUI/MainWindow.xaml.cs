@@ -28,7 +28,6 @@ namespace MicrosoftRewardsFarmerUI
     /// </summary>
     public partial class MainWindow : Window {
 
-        private readonly string pathToData = Environment.ExpandEnvironmentVariables(@"%APPDATA%\MicrosoftRewardsFarmerUI\data");
         private Process InstallProcess;
         private Process FarmerProcess;
         private List<Account> Accounts;
@@ -41,7 +40,7 @@ namespace MicrosoftRewardsFarmerUI
         }
 
         private void RefreshAccounts() {
-            Accounts = JsonConvert.DeserializeObject<List<Account>>(File.ReadAllText(pathToData + @"\allAccounts.json"));
+            Accounts = JsonConvert.DeserializeObject<List<Account>>(File.ReadAllText(@".\data\allAccounts.json"));
             AccountComboBox.Items.Clear();
             AccountComboBox.Items.Add("New Account...");
 
@@ -52,7 +51,7 @@ namespace MicrosoftRewardsFarmerUI
 
             //Write new account to allAccounts.json
             string json = JsonConvert.SerializeObject(Accounts, Formatting.Indented);
-            File.WriteAllText(pathToData + @"\allAccounts.json", json);
+            File.WriteAllText(@".\data\allAccounts.json", json);
         }
 
         private void NumericOnly(object sender, TextChangedEventArgs e) {
@@ -105,7 +104,7 @@ namespace MicrosoftRewardsFarmerUI
                 StartInfo = new ProcessStartInfo {
                     FileName = "python.exe",
                     Arguments = string.Format("-u \"{0}\"{1}{2}{3}{4}{5}{6}", 
-                                                pathToData + @"\main.py", (bool)HeadCheckBox.IsChecked ? " -v" : "", LanguageTextBox.Text.Length > 0 ? " -l " + LanguageTextBox.Text : "", 
+                                                @".\data\main.py", (bool)HeadCheckBox.IsChecked ? " -v" : "", LanguageTextBox.Text.Length > 0 ? " -l " + LanguageTextBox.Text : "", 
                                                 GeolocationTextBox.Text.Length > 0 ? " -g " + GeolocationTextBox.Text : "", ProxyTextBox.Text.Length > 0 ? " -p " + ProxyTextBox.Text : "",
                                                 (bool)TelegramCheckBox.IsChecked ? " -t " + telegram.token + " " + telegram.chatId : "", (bool)DiscordCheckBox.IsChecked ? " -d " + discord.webhook : ""),
                     UseShellExecute = false, // Do not use OS shell
@@ -170,7 +169,7 @@ namespace MicrosoftRewardsFarmerUI
                 Accounts[AccountComboBox.SelectedIndex - 1].password = PasswordTextBox.Password;
             }
             string json = JsonConvert.SerializeObject(Accounts, Formatting.Indented);
-            File.WriteAllText(pathToData + @"\allAccounts.json", json);
+            File.WriteAllText(@".\data\allAccounts.json", json);
             RefreshAccounts();
         }
 
@@ -179,7 +178,7 @@ namespace MicrosoftRewardsFarmerUI
             if (AccountComboBox.SelectedIndex != 0) {
                 Accounts.RemoveAt(AccountComboBox.SelectedIndex - 1);
                 string json = JsonConvert.SerializeObject(Accounts, Formatting.Indented);
-                File.WriteAllText(pathToData + @"\allAccounts.json", json);
+                File.WriteAllText(@".\data\allAccounts.json", json);
                 RefreshAccounts();
             }
         }
@@ -221,7 +220,7 @@ namespace MicrosoftRewardsFarmerUI
         }
 
         private void RefreshTelegramAccounts() {
-            Telegrams = JsonConvert.DeserializeObject<List<Telegram>>(File.ReadAllText(pathToData + @"\telegrams.json"));
+            Telegrams = JsonConvert.DeserializeObject<List<Telegram>>(File.ReadAllText(@".\data\telegrams.json"));
             TelegramComboBox.Items.Clear();
             TelegramComboBox.Items.Add("New Telegram...");
 
@@ -232,7 +231,7 @@ namespace MicrosoftRewardsFarmerUI
 
             //Write new account to telegram.json
             string json = JsonConvert.SerializeObject(Telegrams, Formatting.Indented);
-            File.WriteAllText(pathToData + @"\telegrams.json", json);
+            File.WriteAllText(@".\data\telegrams.json", json);
         }
 
         private void TelegramSaveButton_Click(object sender, RoutedEventArgs e) {
@@ -246,7 +245,7 @@ namespace MicrosoftRewardsFarmerUI
                 Telegrams[TelegramComboBox.SelectedIndex - 1].chatId = ChatIDTextBox.Text;
             }
             string json = JsonConvert.SerializeObject(Telegrams, Formatting.Indented);
-            File.WriteAllText(pathToData + @"\telegrams.json", json);
+            File.WriteAllText(@".\data\telegrams.json", json);
             RefreshTelegramAccounts();
         }
 
@@ -255,7 +254,7 @@ namespace MicrosoftRewardsFarmerUI
             if (TelegramComboBox.SelectedIndex != 0) {
                 Telegrams.RemoveAt(TelegramComboBox.SelectedIndex - 1);
                 string json = JsonConvert.SerializeObject(Telegrams, Formatting.Indented);
-                File.WriteAllText(pathToData + @"\telegrams.json", json);
+                File.WriteAllText(@".\data\telegrams.json", json);
                 RefreshTelegramAccounts();
             }
         }
@@ -279,7 +278,7 @@ namespace MicrosoftRewardsFarmerUI
         }
 
         private void RefreshDiscordAccounts() {
-            Discords = JsonConvert.DeserializeObject<List<Discord>>(File.ReadAllText(pathToData + @"\discords.json"));
+            Discords = JsonConvert.DeserializeObject<List<Discord>>(File.ReadAllText(@".\data\discords.json"));
             DiscordComboBox.Items.Clear();
             DiscordComboBox.Items.Add("New Discord...");
 
@@ -290,7 +289,7 @@ namespace MicrosoftRewardsFarmerUI
 
             //Write new account to discords.json
             string json = JsonConvert.SerializeObject(Discords, Formatting.Indented);
-            File.WriteAllText(pathToData + @"\discords.json", json);
+            File.WriteAllText(@".\data\discords.json", json);
         }
 
         private void DiscordSaveButton_Click(object sender, RoutedEventArgs e) {
@@ -303,7 +302,7 @@ namespace MicrosoftRewardsFarmerUI
                 Discords[DiscordComboBox.SelectedIndex - 1].webhook = WebhookTextBox.Text;
             }
             string json = JsonConvert.SerializeObject(Discords, Formatting.Indented);
-            File.WriteAllText(pathToData + @"\discords.json", json);
+            File.WriteAllText(@".\data\discords.json", json);
             RefreshDiscordAccounts();
         }
 
@@ -312,7 +311,7 @@ namespace MicrosoftRewardsFarmerUI
             if (DiscordComboBox.SelectedIndex != 0) {
                 Discords.RemoveAt(DiscordComboBox.SelectedIndex - 1);
                 string json = JsonConvert.SerializeObject(Discords, Formatting.Indented);
-                File.WriteAllText(pathToData + @"\discords.json", json);
+                File.WriteAllText(@".\data\discords.json", json);
                 RefreshDiscordAccounts();
             }
         }

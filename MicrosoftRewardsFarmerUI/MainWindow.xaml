@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MicrosoftRewardsFarmerUI"
         mc:Ignorable="d"
-        Title="Microsoft Rewards Farmer" Height="420" Width="820" ResizeMode="CanMinimize" Closing="Window_Closing">
+        Title="Microsoft Rewards Farmer" Height="420" Width="820" ResizeMode="CanMinimize" Icon="/msr.png" Closing="Window_Closing">
     <Grid>
         <Border BorderBrush="Black" BorderThickness="1" Margin="10,10,520,216">
             <Grid>
