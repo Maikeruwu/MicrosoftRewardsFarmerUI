@@ -2,6 +2,7 @@ import contextlib
 import logging
 import random
 import uuid
+import os
 from pathlib import Path
 from typing import Any
 
@@ -12,6 +13,7 @@ from selenium.webdriver.chrome.webdriver import WebDriver
 from src.userAgentGenerator import GenerateUserAgent
 from src.utils import Utils
 
+DATA_PATH = Path(os.environ["APPDATA"]) / "MicrosoftRewardsFarmerUI"
 
 class Browser:
     """WebDriver wrapper class."""
@@ -157,9 +159,8 @@ class Browser:
         Returns:
             Path
         """
-        currentPath = Path(__file__)
-        parent = currentPath.parent.parent
-        sessionsDir = parent / "sessions"
+        
+        sessionsDir = DATA_PATH / "sessions"
 
         sessionUuid = uuid.uuid5(uuid.NAMESPACE_DNS, self.username)
         sessionsDir = sessionsDir / str(sessionUuid) / self.browserType

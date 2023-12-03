@@ -4,6 +4,7 @@ import logging
 import logging.handlers as handlers
 import random
 import sys
+import os
 from pathlib import Path
 
 from src import Browser, DailySet, Login, MorePromotions, PunchCards, Searches
@@ -12,7 +13,7 @@ from src.loggingColoredFormatter import NotSoColoredFormatter
 from src.notifier import Notifier
 
 POINTS_COUNTER = 0
-
+DATA_PATH = Path(os.environ["APPDATA"]) / "MicrosoftRewardsFarmerUI"
 
 def main():
     setupLogging()
@@ -31,14 +32,14 @@ def setupLogging():
     terminalHandler = logging.StreamHandler(sys.stdout)
     terminalHandler.setFormatter(NotSoColoredFormatter(format))
 
-    (Path(__file__).resolve().parent / "logs").mkdir(parents=True, exist_ok=True)
+    (DATA_PATH / "logs").mkdir(parents=True, exist_ok=True)
 
     logging.basicConfig(
         level=logging.INFO,
         format=format,
         handlers=[
             handlers.TimedRotatingFileHandler(
-                (Path(__file__).resolve().parent.name + "/logs/activity.log"),
+                (DATA_PATH / "logs/activity.log"),
                 when="midnight",
                 interval=1,
                 backupCount=2,
@@ -101,7 +102,7 @@ def bannerDisplay():
 
 
 def setupAccounts() -> dict:
-    accountPath = Path(__file__).resolve().parent / "accounts.json"
+    accountPath = DATA_PATH / "data/accounts.json"
     if not accountPath.exists():
         accountPath.write_text(
             json.dumps(

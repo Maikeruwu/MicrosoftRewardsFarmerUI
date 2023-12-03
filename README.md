@@ -11,5 +11,5 @@ The original project can be found [here](https://github.com/charlesbel/Microsoft
 
 ## How to use
 1. Download the latest release from [here](https://github.com/Maikeruwu/MicrosoftRewardsFarmerUI/releases/latest)
-2. Install the program by running the `MicrosoftRewardsFarmerInstaller.msi` or the `setup.exe (untested)`  file
+2. Install the program by running the `MicrosoftRewardsFarmerInstaller.msi` or the `setup.exe`  file
 3. Enjoy!
