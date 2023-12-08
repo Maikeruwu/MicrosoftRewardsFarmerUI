@@ -177,6 +177,17 @@
                     "Property" = "8:_B77527482765430D9A88A1FC61125CED"
                         "Folders"
                         {
+                            "{9EF0B969-E518-4E46-987F-47570745A589}:_7381B747DA70484B963A42CEFF178CC4"
+                            {
+                            "Name" = "8:data"
+                            "AlwaysCreate" = "11:TRUE"
+                            "Condition" = "8:"
+                            "Transitive" = "11:FALSE"
+                            "Property" = "8:_4EE37071CD19416EB8F7515DE586E250"
+                                "Folders"
+                                {
+                                }
+                            }
                         }
                     }
                 }
@@ -232,7 +243,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Microsoft Rewards Farmer UI"
         "ProductCode" = "8:{EC298B2F-24B5-4E31-A029-BC1C13DE367B}"
-        "PackageCode" = "8:{CCE9CEA7-9D86-436A-BF79-1EB6F350F22B}"
+        "PackageCode" = "8:{1D459200-7F35-4110-9698-6307D4FD3106}"
         "UpgradeCode" = "8:{2E276D2F-A4D3-4EAA-B470-FEA29C4236EA}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -736,34 +747,6 @@
         }
         "ProjectOutput"
         {
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_BE3F35A9EDD7408C932E4C83D57385D0"
-            {
-            "SourcePath" = "8:"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_12FAE8FBC9404F60B53C352EA7B5679F"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            "ProjectOutputGroupRegister" = "3:1"
-            "OutputConfiguration" = "8:"
-            "OutputGroupCanonicalName" = "8:ContentFiles"
-            "OutputProjectGuid" = "8:{DA8E897C-3A8E-484D-9035-9887D8931183}"
-            "ShowKeyOutput" = "11:TRUE"
-                "ExcludeFilters"
-                {
-                }
-            }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_D2A0ABF6F83C4D2392B34BFDAF5196DF"
             {
             "SourcePath" = "8:..\\MicrosoftRewardsFarmerUI\\obj\\Release\\net7.0-windows\\apphost.exe"
@@ -790,10 +773,6 @@
             "ShowKeyOutput" = "11:TRUE"
                 "ExcludeFilters"
                 {
-                "ExcludeFilter" = "8:telegrams.json"
-                "ExcludeFilter" = "8:discords.json"
-                "ExcludeFilter" = "8:allAccounts.json"
-                "ExcludeFilter" = "8:accounts.json"
                 }
             }
         }
