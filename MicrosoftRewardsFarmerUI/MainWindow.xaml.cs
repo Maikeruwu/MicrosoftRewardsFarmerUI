@@ -36,7 +36,29 @@ namespace MicrosoftRewardsFarmerUI
 
         public MainWindow() {
             InitializeComponent();
+            InitContentFiles();
             RefreshAccounts();
+            RefreshTelegramAccounts();
+            RefreshDiscordAccounts();
+        }
+
+        private void InitContentFiles() {
+            // Check if content files exist, if not create them
+            if (!Directory.Exists(pathToData)) {
+                Directory.CreateDirectory(pathToData);
+            }
+            if (!File.Exists(pathToData + @"\allAccounts.json")) {
+                File.WriteAllText(pathToData + @"\allAccounts.json", "[]");
+            }
+            if (!File.Exists(pathToData + @"\accounts.json")) {
+                File.WriteAllText(pathToData + @"\accounts.json", "[]");
+            }
+            if (!File.Exists(pathToData + @"\telegrams.json")) {
+                File.WriteAllText(pathToData + @"\telegrams.json", "[]");
+            }
+            if (!File.Exists(pathToData + @"\discords.json")) {
+                File.WriteAllText(pathToData + @"\discords.json", "[]");
+            }
         }
 
         private void RefreshAccounts() {
@@ -47,7 +69,7 @@ namespace MicrosoftRewardsFarmerUI
             foreach (var account in Accounts) {
                 AccountComboBox.Items.Add(account.username);
             }
-            AccountComboBox.SelectedIndex = 1;
+            AccountComboBox.SelectedIndex = AccountComboBox.Items.Count - 1;
 
             //Write new account to allAccounts.json
             string json = JsonConvert.SerializeObject(Accounts, Formatting.Indented);
@@ -231,7 +253,7 @@ namespace MicrosoftRewardsFarmerUI
             foreach (var telegram in Telegrams) {
                 TelegramComboBox.Items.Add(telegram.chatId);
             }
-            TelegramComboBox.SelectedIndex = 1;
+            TelegramComboBox.SelectedIndex = TelegramComboBox.Items.Count - 1;
 
             //Write new account to telegram.json
             string json = JsonConvert.SerializeObject(Telegrams, Formatting.Indented);
@@ -289,7 +311,7 @@ namespace MicrosoftRewardsFarmerUI
             foreach (var discord in Discords) {
                 DiscordComboBox.Items.Add(discord.webhook);
             }
-            DiscordComboBox.SelectedIndex = 1;
+            DiscordComboBox.SelectedIndex = DiscordComboBox.Items.Count - 1;
 
             //Write new account to discords.json
             string json = JsonConvert.SerializeObject(Discords, Formatting.Indented);

@@ -8,26 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="data\accounts.json" />
-    <None Remove="data\allAccounts.json" />
-    <None Remove="data\discords.json" />
-    <None Remove="data\telegrams.json" />
     <None Remove="msr.png" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="data\accounts.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\allAccounts.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\discords.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="data\telegrams.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
 
   <ItemGroup>
