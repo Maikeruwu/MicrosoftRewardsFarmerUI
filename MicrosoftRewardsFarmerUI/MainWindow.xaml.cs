@@ -161,8 +161,8 @@ namespace MicrosoftRewardsFarmerUI
         }
 
         private void KillButton_Click(object sender, RoutedEventArgs e) {
-            InstallProcess?.Kill();
-            FarmerProcess?.Kill();
+            InstallProcess?.Kill(true);
+            FarmerProcess?.Kill(true);
             OutputBlock.Text += "\n---------------------------------------\n         Farmer Process Killed\n---------------------------------------\n";
         }
 
