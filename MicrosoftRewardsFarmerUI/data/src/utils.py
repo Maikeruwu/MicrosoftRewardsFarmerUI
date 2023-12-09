@@ -214,7 +214,7 @@ class Utils:
         for item in counters['pcSearch']:
             targetDesktop += item.get('pointProgressMax', 0)
 
-        if targetDesktop in [33, 102]:
+        if targetDesktop in [33, 90, 102]:
             # Level 1 or 2 EU/South America
             searchPoints = 3
         elif targetDesktop == 55 or targetDesktop >= 170:
@@ -226,6 +226,10 @@ class Utils:
             progressMobile = counters["mobileSearch"][0]["pointProgress"]
             targetMobile = counters["mobileSearch"][0]["pointProgressMax"]
             remainingMobile = int((targetMobile - progressMobile) / searchPoints)
+
+        # 3 extra searches, since earning now only starts after the third search
+        if remainingDesktop > 0: remainingDesktop += 3
+        if remainingMobile > 0: remainingMobile += 3
         return remainingDesktop, remainingMobile
 
     def formatNumber(self, number, num_decimals=2):
