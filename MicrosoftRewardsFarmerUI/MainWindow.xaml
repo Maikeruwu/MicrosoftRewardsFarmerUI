@@ -58,6 +58,7 @@
                 <Label Content="Options" FontSize="20"/>
 
                 <CheckBox x:Name="HeadCheckBox" Content="Show Window" Width="200" Margin="10,41,78,133"/>
+                <CheckBox x:Name="ScrollCheckBox" Content="Always scroll to bottom" Width="200" Margin="116,41,0,133" IsChecked="True"/>
 
                 <Expander Header="Advanced" Margin="5,65,-117,0" Width="400" ExpandDirection="Down">
                     <Grid>
@@ -82,7 +83,7 @@
                 <Button x:Name="KillButton" Content="Stop Program" Width="100" Height="20" Margin="0,10,10,0" HorizontalAlignment="Right" VerticalAlignment="Top" Click="KillButton_Click" />
 
                 <Border BorderBrush="Gray" BorderThickness="1" Margin="10,40,10,10">
-                    <ScrollViewer>
+                    <ScrollViewer x:Name="OutputScroll">
                         <TextBlock x:Name="OutputBlock" FontFamily="Cascadia Mono" TextWrapping="Wrap"/>
                     </ScrollViewer>
                 </Border>

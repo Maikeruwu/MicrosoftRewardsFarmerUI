@@ -156,7 +156,10 @@ namespace MicrosoftRewardsFarmerUI
 
         private void DataReceivedEventHandler(object sender, DataReceivedEventArgs e) {
             Dispatcher.Invoke(() => {
-                OutputBlock.Text += e.Data + Environment.NewLine;
+                OutputBlock.Text += e.Data + Environment.NewLine; 
+                if ((bool)ScrollCheckBox.IsChecked) {
+                    OutputScroll.ScrollToBottom();
+                }
             });
         }
 
