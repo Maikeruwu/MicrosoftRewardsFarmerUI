@@ -143,8 +143,9 @@ def executeBot(currentAccount, notifier: Notifier, args: argparse.Namespace):
                 remainingSearches
             )
 
-        if remainingSearchesM != 0:
-            desktopBrowser.closeBrowser()
+        desktopBrowser.closeBrowser()
+
+        if remainingSearchesM != 1: # TODO: want to test this, change back to 0
             with Browser(
                 mobile=True, account=currentAccount, args=args
             ) as mobileBrowser:
@@ -152,6 +153,7 @@ def executeBot(currentAccount, notifier: Notifier, args: argparse.Namespace):
                 accountPointsCounter = Searches(mobileBrowser).bingSearches(
                     remainingSearchesM
                 )
+                mobileBrowser.closeBrowser()
 
         logging.info(
             f"[POINTS] You have earned {desktopBrowser.utils.formatNumber(accountPointsCounter - startingPoints)} points today !"
