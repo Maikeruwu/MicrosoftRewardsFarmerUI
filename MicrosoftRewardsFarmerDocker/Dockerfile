@@ -4,6 +4,7 @@ WORKDIR /app
 COPY ./autoRun.py /app/autoRun.py
 COPY ./utils.py /app/src/utils.py
 COPY ./requirements.txt /app/requirements.txt
+COPY ./entrypoint.sh /app/entrypoint.sh
 RUN pip install -r requirements.txt
 
 # No extra arguments
